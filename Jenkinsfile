@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
+                git branch: 'master',
                     url: 'https://github.com/jehernandezf/demo-hexagon-architecture.git',
                     credentialsId: 'jehernandezf'
             }
