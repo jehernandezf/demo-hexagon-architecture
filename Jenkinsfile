@@ -6,14 +6,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'master',
-                    url: 'https://github.com/jehernandezf/demo-hexagon-architecture.git',
-                    credentialsId: 'jehernandezf'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean package -DskipTests=true'
