@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     sh "sleep 10"
-                    sh "curl http://localhost:8081/actuator/health"
+                    sh "curl --fail http://localhost:8081/actuator/health | grep '\"status\":\"UP\"'"
                 }
             }
         }
