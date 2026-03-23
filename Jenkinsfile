@@ -37,7 +37,7 @@ pipeline {
         stage('Healthcheck') {
             steps {
                 script {
-                    sh "sleep 10"
+                    sh "sleep 25"
                     sh "curl --fail http://localhost:8081/actuator/health"
                 }
             }
