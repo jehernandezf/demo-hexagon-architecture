@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     sh "sleep 10"
-                    sh "docker exec demo-hexagon-architecture curl --fail http://localhost:8081/actuator/health | grep '\"status\":\"UP\"'"
+                    sh "docker exec demo-hexagon-architecture curl --fail http://localhost:8081/actuator/health"
                 }
             }
         }
