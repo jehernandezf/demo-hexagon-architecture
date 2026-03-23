@@ -10,12 +10,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
+import org.springframework.test.annotation.DirtiesContext;
 
 import com.example.hexagon.demo.domain.model.Employee;
 import com.example.hexagon.demo.infrastructure.adapters.out.persistence.repository.SpringDataEmployeeRepository;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 class JpaEmployeeRepositoryAdapterTest {
 
     @Autowired
