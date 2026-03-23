@@ -39,14 +39,14 @@ pipeline {
 
         stage('Docker Run & Validate') {
             steps {
-                sh "docker run $DOCKER_IMAGE"
+                sh "docker run -d --name demo-hexagon-architecture -p 8081:8081 $DOCKER_IMAGE"
             }
         }
     }
 
     post {
         success {
-            echo 'Pipeline ejecutado correctamente: build, test, docker y push.'
+            echo 'Pipeline ejecutado correctamente: build, test, docker y deploy.'
         }
         failure {
             echo 'Pipeline falló, revisar logs.'
