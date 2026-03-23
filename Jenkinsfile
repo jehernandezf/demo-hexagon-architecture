@@ -34,6 +34,14 @@ pipeline {
                 sh "docker run -d --name demo-hexagon-architecture -p 8081:8081 $DOCKER_IMAGE"
             }
         }
+        stage('Healthcheck') {
+            steps {
+                script {
+                    sh "sleep 10"
+                    sh "curl --fail http://localhost:8081/actuator/health"
+                }
+            }
+        }
     }
 
     post {
